@@ -1,0 +1,26 @@
+// ===============
+// colors palette
+// ===============
+:root {
+	// Site colors (Цвета сайта):
+	// =================================================================
+   --borders: #FB4E4E; // Site Dividers & borders, disabled states color - (цвет Разделители и границы, отключенные состояния)
+   --error: #FB4E4E; // Site Error color - (цвет ошибки)
+   --warning: #E3C300; // Site Warning color - (цвет Предупреждение)
+   --success: #E3C300; // Site Success color - (цвет Успех)
+
+	// Background colors (фоновые цвета):
+	// =================================================================
+	--bg-primary: #E5E5E5; // BG primary background color - (основной фоновый цвет сайта)
+	--bg-secondary: #7E4E24; // BG secondary background color -(дополнительный фоновый цвет сайта)
+	--bg-accent: #697B03; // BG accent - Primary actions, buttons and links. Основные действия, кнопки и ссылки
+	--bg-buttons: #F9F9FA; // BG Background and disabled background for buttons - Фон и отключенный фон для кнопок
+
+	// Text colors (Текстовые цвета):
+	// =================================================================
+	--text-primary: #25282B; // Text primary text color - (Основной текстовый цвет сайта)
+	--text-secondary: #52575C; // Text secondary text color - (дополнительный текстовый цвет сайта)
+   --text-inactive: #A0A4A8; // Text Inactive states text color - (Неактивные состояния)
+	--text-default: #CACCCF; // Default texts in text field - Тексты по умолчанию в текстовом поле
+	// =================================================================
+}
