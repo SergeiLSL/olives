@@ -1,5 +1,8 @@
 //====================================================================================================
 .page {
+   // .page__reserve
+   &__reserve {
+   }   
    // .page__first
    &__first {
    }
@@ -13,7 +16,7 @@
    &__health {
    }
    // .page__product
-   &__contact {
+   &__product {
    }
    // .page__contact
    &__contact {
@@ -75,6 +78,27 @@
    // .first-page__text
    &__text {
       color: var(--bg-secondary);
+   }
+}
+//========================================================================================
+//========================================================================================
+.reserve-page {
+   padding-top: rem(24);
+   padding-bottom: rem(24);
+   background-color: #E8E8E8;
+   // .reserve-page__container
+   &__container {
+   }
+   // .reserve-page__inner
+   &__inner {
+   }
+   // .reserve-page__image
+   &__image {
+      text-align: center;
+      width: 100%;
+      img {
+         max-width: 100%;
+      }
    }
 }
 
