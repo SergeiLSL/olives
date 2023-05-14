@@ -6,21 +6,24 @@
    // .page__about
    &__about {
    }
+   // .page__work
+   &__work {
+   }
+   // .page__health
+   &__health {
+   }
+   // .page__product
+   &__contact {
+   }
+   // .page__contact
+   &__contact {
+   }
 }
 //====================================================================================================
 //====================================================================================================
 //====================================================================================================
 .first-page {
    position: relative;
-   // @include adaptiveValue("padding-top", 52, 52);
-   // @include adaptiveValue("padding-bottom", 182, 50);
-   // min-height: calc(100vh - 84px);
-   // height: 48.611111%; /* 7729/1440 */
-   // height: 53.29%; /* 729/1368 */
-   // background-image: url("@img/top/top.jpg");
-   // background-repeat: no-repeat;
-   // background-size: cover;
-   // .first-page__image-ibg
    &__image-ibg {
       position: relative;
       height: rem(729); /* 729/1368 */
@@ -41,12 +44,10 @@
    // .first-page__content
    &__content {
       font-weight: 500;
-      font-size: rem(18);
+      @include adaptiveValue("font-size", 18, 14);
       line-height: 133.33%; /* 24/18 */
       letter-spacing: rem(02);
       color: var(--bg-secondary);
-      // position: relative;
-      // z-index: 2;
       position: absolute;
       bottom: rem(295);
       left: rem(24);
@@ -61,14 +62,14 @@
    }
    // .first-page__title
    &__title {
-      font-size: rem(44);
+      @include adaptiveValue("font-size", 44, 36);
       line-height: 122.73%; /* 54/44 */
       color: var(--bg-secondary);
       span {
          color: var(--bg-accent);
       }
       &:not(:last-child) {
-         margin-bottom: rem(10);
+         margin-bottom: rem(18);
       }
    }
    // .first-page__text
@@ -171,8 +172,82 @@
 
 //========================================================================================================================================================
 //========================================================================================
+.work-page {
+   @include adaptiveValue("padding-top", 63, 25);
+   @include adaptiveValue("padding-bottom", 30, 25);
+   // background-color: #e5e5e5;
+   // .work-page__container
+   &__container {
+   }
+   // .work-page__info
+   &__info {
+      display: flex;
+      justify-content: center;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 25);
+      }
+   }
+   // .work-page__title
+   &__title {
+   }
+   // .work-page__image
+   // ? тоже самое что -ibg
+   &__image {
+      position: relative;
+      max-width: rem(877);
+      padding-bottom: 48.7%;
+      margin: 0 auto;
+      img {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         object-fit: cover;
+      }
+   }
+}
+//========================================================================================
+//====================================================================================================
+.health-page {
+   @include adaptiveValue("padding-top", 133, 60);
+   @include adaptiveValue("padding-bottom", 94, 40);
+   background: url("@img/health/fon.jpg");
+   // .pusto__container
+   &__container {
+   }
+   // .pusto__inner
+   &__inner {
+      max-width: rem(1078);
+      margin: 0 auto;
+   }
+   // .pusto__content
+   &__content {
+      font-weight: 300;
+      @include adaptiveValue("font-size", 52, 30);
+      line-height: 123%; /* 64/52 */
+      letter-spacing: rem(02);
+      color: var(--bg-secondary);
+      text-align: center;
+      @include adaptiveValue("padding-bottom", 80, 0);
+   }
+   // .pusto__title
+   &__title {
+      color: inherit;
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+   }
+   // .pusto__text
+   &__text {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 18, 14);
+      line-height: 133.33%; /* 24/18 */
+      color: var(--bg-secondary);
+   }
+}
 
-
+//========================================================================================
 //========================================================================================
 .product-page {
    @include adaptiveValue("padding-top", 40, 25);
@@ -180,7 +255,7 @@
    // .product-page__container
    &__container {
    }
-   // .product-page__inner   
+   // .product-page__inner
    &__inner {
       max-width: rem(1115);
       margin: 0 auto;
@@ -263,4 +338,78 @@
       }
    }
 }
-
+//========================================================================================
+//========================================================================================
+.contact-page {
+   padding-top: rem(233);
+   @include adaptiveValue("padding-bottom", 344, 230);
+   background: url('@img/contact/olives.svg') left 50% no-repeat, url('@img/contact/fon.jpg');
+   @media (max-width:$mobileSmall){
+      background:url('@img/contact/fon.jpg');
+   }
+   // .contact-page__container
+   &__container {
+   }
+   // .contact-page__inner
+   &__inner {
+      max-width: rem(1078);
+      margin: 0 auto;
+   }
+   // .contact-page__content
+   &__content {      
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: 133.33%; /* 24/18 */
+      letter-spacing: rem(02);
+      color: var(--bg-secondary);
+      text-align: center;
+      margin-left: rem(250);
+      @include adaptiveValue("margin-left", 250, 0);
+   }
+   // .contact-page__subtitle
+   &__subtitle {
+      color: var(--bg-secondary);
+      &:not(:last-child) {
+         margin-bottom: rem(8);
+      }
+   }
+   // .contact-page__title
+   &__title {
+      @include adaptiveValue("font-size", 44, 36);
+      line-height: 122.73%; /* 54/44 */
+      color: var(--bg-secondary);
+      span {
+         color: var(--bg-accent);
+      }
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 45, 25);
+      }
+   }
+   // .contact-page__text
+   &__text {
+      @include adaptiveValue("font-size", 18, 16);
+      color: var(--bg-secondary);
+      &:not(:last-child) {
+         margin-bottom: rem(31);
+      }
+   }
+   // .contact-page__button
+   &__button {
+      display: inline-block;
+      font-weight: 600;
+      font-size: rem(14);
+      line-height: 128.57%; /* 18/14 */
+      letter-spacing: rem(0.2);
+      text-transform: uppercase;
+      padding: rem(20) rem(50);
+      color: var(--bg-buttons);
+      background-color: var(--bg-accent);
+      // border: rem(2) solid $pageColor;
+      border-radius: rem(5);
+      transition: all 0.5s;
+      &:hover {
+         opacity: 0.8;
+         color: #fff;
+      }
+   }
+}
