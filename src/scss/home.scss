@@ -77,8 +77,8 @@
    }
    // .first-page__text
    &__text {
-      color: var(--bg-secondary);
-   }
+      color: var(--bg-secondary);   }
+
 }
 //========================================================================================
 //========================================================================================
@@ -96,9 +96,14 @@
    &__image {
       text-align: center;
       width: 100%;
+      transition: all 0.3s;
       img {
          max-width: 100%;
       }
+      &:hover {
+         transform: scale(1.03)
+      }
+      
    }
 }
 

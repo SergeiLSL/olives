@@ -27,7 +27,7 @@
       left: 0;
       width: 100%;
       height: rem(84);
-      // background-color: #e5e5bd;
+      background-color: #e5e5bd; // ? это цвет плашки
       background-color: transparent;
       z-index: 2;
    }
@@ -64,7 +64,7 @@
       @include adaptiveValue("padding-top", 20, 12, 2, 1368, 768);
       @include adaptiveValue("padding-bottom", 20, 12, 2, 1368, 768);
       @include adaptiveValue("padding-right", 24, 0, 2, 1368, 768);
-      @include adaptiveValue("padding-left", 24, 0, 2, 1368, 768);      
+      @include adaptiveValue("padding-left", 24, 0, 2, 1368, 768);
       // font-size: rem(18);
       @include adaptiveValue("font-size", 14, 14, 2, 1368, 768);
       color: var(--bg-accent);
@@ -102,8 +102,8 @@
       @include adaptiveValue("column-gap", 27, 18, 2, 1368, 768);
       row-gap: rem(5);
       padding: 0 rem(48) 0 rem(132);
-      @media (max-width:$mobile){
-         padding: 0 rem(20);   
+      @media (max-width: $mobile) {
+         padding: 0 rem(20);
       }
    }
    // .menu__item
@@ -131,7 +131,7 @@
       &:hover::after {
          left: 0;
          width: 100%;
-      }     
+      }
    }
    // .menu__icon
    &__icon {
@@ -160,8 +160,7 @@
       top: 0;
       left: -100%;
       transition: left 0.3s;
-      // background-color: #e5e5bd;
-      background-color: transparent;
+      background-color: #e5e5bd; // ? цвет шторки
       padding: rem(110) rem(30) rem(20) rem(50);
       overflow: auto;
       z-index: 1;
@@ -286,7 +285,6 @@
 	}
 }
 */
-
 
 //====================================================================================================
 

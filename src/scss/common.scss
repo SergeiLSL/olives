@@ -68,55 +68,18 @@
 	}
 }
 
-
-/* +++++++++++++++++++++ */
-.pusto {
-   padding: rem(50);
-   background-color: #fbfed2;
-   // .pusto__container
-   &__container {
-   }
-   // .pusto__text
-   &__text {
-      font-weight: 600;
-      font-size: rem(64);
-      color: var(--bg-accent);
-      text-align: center;
-   }
+/* ++++++++++++++++++++++++++++ */ // ? Анимация
+// https://www.youtube.com/watch?v=kupwmF72Plo&t=7s
+// time 13:29
+._anim-show {
+   transform: translate(0px, 120%);
+   opacity: 0;
+   transition: all 0.8s ease 0s;
 }
-
-.pusto {
-   @include adaptiveValue("padding-top", 133, 60);
-   @include adaptiveValue("padding-bottom", 94, 40); 
-   background: url('@img/health/fon.jpg');  
-   // .pusto__container
-   &__container {
-   }
-   // .pusto__inner
-   &__inner {
-   }
-   // .pusto__content
-   &__content {
-      font-weight: 300;
-      font-size: rem(52);
-      line-height: 123%; /* 64/52 */
-      letter-spacing: rem(02);
-      color: var(--bg-secondary);
-      text-align: center;
-      @include adaptiveValue("padding-bottom", 80, 30);
-   }
-   // .pusto__title
-   &__title {
-      color: inherit;
-      &:not(:last-child) {
-         margin-bottom: rem(30);
-      }
-   }
-   // .pusto__text
-   &__text {
-      font-weight: 500;
-      font-size: rem(18);
-      line-height: 133.33%; /* 24/18 */
-      color: var(--bg-secondary);
-   }
+._anim-show._active,
+._active ._anim-show {
+   opacity: 1;
+   transform: translate(0px, 0px);
 }
+/* ++++++++++++++++++++++++++++++++++++++++++ */
+

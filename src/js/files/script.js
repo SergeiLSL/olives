@@ -7,57 +7,60 @@ import { flsModules } from "./modules.js";
 //========================================================================================================================================================
 // Добавляем код для открытия/закрытия меню через бургер ИЛИ ЧИТАЕМ ЧЕРТОГИ
 
-const iconMenu = document.querySelector('.menu__icon');
-const menuBody = document.querySelector('.menu__body');
-if (iconMenu) {
-   iconMenu.addEventListener("click", function (e) {
-      document.body.classList.toggle('_lock'); // добавляем класс замок - запрещаем прокручиваться странице при открытом меню
-		// для решения обращаемся к body и добавляем "overflow: hidden;"
-      iconMenu.classList.toggle('_active'); // при обращении к бургеру добавляем класс _active
-      menuBody.classList.toggle('_active'); // при обращении к бургеру добавляем класс _active
-   });
-}
+// const iconMenu = document.querySelector('.menu__icon');
+// const menuBody = document.querySelector('.menu__body');
+// if (iconMenu) {
+//    iconMenu.addEventListener("click", function (e) {
+//       document.body.classList.toggle('_lock'); // добавляем класс замок - запрещаем прокручиваться странице при открытом меню
+// 		// для решения обращаемся к body и добавляем "overflow: hidden;"
+//       iconMenu.classList.toggle('_active'); // при обращении к бургеру добавляем класс _active
+//       menuBody.classList.toggle('_active'); // при обращении к бургеру добавляем класс _active
+//    });
+// }
 
 //============================================================
 //============================================================
 // Прокрутка при открытом меню бургера
 // Прокрутка при клике time
 //Соберем в константу все ссылки у которых есть атрибут data-goto
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-// Проверим наличие таких ссылок
-if (menuLinks.length > 0) {
-   menuLinks.forEach(menuLink => {
-      menuLink.addEventListener("click", onMenuLinkClick);
-   });
+// const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+// // Проверим наличие таких ссылок
+// if (menuLinks.length > 0) {
+//    menuLinks.forEach(menuLink => {
+//       menuLink.addEventListener("click", onMenuLinkClick);
+//    });
 
-   function onMenuLinkClick(e) {//необходимо получить объект на который мы кликаем
-      const menuLink = e.target;
-      //console.log(menuLink);
-      if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-         const gotoBlock = document.querySelector(menuLink.dataset.goto);
-         // надо учесть высоту шапки, чтобы доезд объекта был точным
-         const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
+//    function onMenuLinkClick(e) {//необходимо получить объект на который мы кликаем
+//       const menuLink = e.target;
+//       //console.log(menuLink);
+//       if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+//          const gotoBlock = document.querySelector(menuLink.dataset.goto);
+//          // надо учесть высоту шапки, чтобы доезд объекта был точным
+//          const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
 
-         // ЧТОБЫ При обращении к пункту меню убиралось и страница прокручивалась к нужному пункту 
-         if (iconMenu.classList.contains('_active')) {
-            document.body.classList.remove('_lock'); // разрешаем прокручиваться странице 
-            iconMenu.classList.remove('_active');// при обращении к бургеру убираем класс _active
-            menuBody.classList.remove('_active');
-         } // при обращении к бургеру убираем класс _active
+//          // ЧТОБЫ При обращении к пункту меню убиралось и страница прокручивалась к нужному пункту 
+//          if (iconMenu.classList.contains('_active')) {
+//             document.body.classList.remove('_lock'); // разрешаем прокручиваться странице 
+//             iconMenu.classList.remove('_active');// при обращении к бургеру убираем класс _active
+//             menuBody.classList.remove('_active');
+//          } // при обращении к бургеру убираем класс _active
 
 
-         // Этот кусочек кода и заставит прокрутиться страницы к нужному месту
-         window.scrollTo({
-            top: gotoBlockValue,
-            behavior: "smooth"
-         });
-         // После выполнения прокрутки отключаем ссылку
-         e.preventDefault();
-      }
-   }
-}
+//          // Этот кусочек кода и заставит прокрутиться страницы к нужному месту
+//          window.scrollTo({
+//             top: gotoBlockValue,
+//             behavior: "smooth"
+//          });
+//          // После выполнения прокрутки отключаем ссылку
+//          e.preventDefault();
+//       }
+//    }
+// }
 //=======================================================================================================================================================
-// ? Анимация при скролле
+// ? Анимация при скролле Есть пример в папке D/PROJECT  Code Only/Практика
+// ? Анимация time 13:29
+// https://www.youtube.com/watch?v=kupwmF72Plo&t=7s
+
 const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) { // ищем все объекты
@@ -67,7 +70,7 @@ if (animItems.length > 0) { // ищем все объекты
 			const animItem = animItems[index]; // получаем переменную для каждого элемента массива
 			const animItemHeight = animItem.offsetHeight; // получаем высоту объекта 
 			const animItemOffset = offset(animItem).top; // получаем позицию объекта относительно верха через фуекцию offset(el)
-			const animStart = 8; // коэф-т момента старта анимации
+			const animStart = 4; // коэф-т момента старта анимации
 
 			let animItemPoint = window.innerHeight - animItemHeight / animStart; // от высоты окна браузера - отнимаем высоту объекта поделенную на animStart
 			if (animItemHeight > window.innerHeight) {
@@ -94,4 +97,38 @@ if (animItems.length > 0) { // ищем все объекты
 	setTimeout(() => {
 		animOnScroll();
 	}, 200);
+}
+
+/* ++++++++++++++++++++++++++++++ */
+window.addEventListener('load', windowLoad);
+
+function windowLoad() {
+   document.addEventListener('click', documentActions);
+}
+
+
+function documentActions(e) {
+   const targetElement = e.target;
+
+   if (targetElement.closest(".icon-menu")) {
+      document.documentElement.classList.toggle("menu-open");
+   }
+
+   if (targetElement.closest("[data-goto]")) {
+      document.documentElement.classList.contains("menu-open")
+         ? document.documentElement.classList.remove("menu-open")
+         : null;
+
+      const goTo = targetElement.closest("[data-goto]").dataset.goto;
+      const goToElement = document.querySelector(goTo);
+      const headerHeight = document.querySelector(".header").offsetHeight;
+
+      if (goToElement) {
+         window.scrollTo({
+            top: goToElement.offsetTop - (headerHeight + 15),
+            behavior: "smooth",
+         });
+      }
+      e.preventDefault();
+   }
 }
