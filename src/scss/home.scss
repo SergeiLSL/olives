@@ -220,23 +220,27 @@
    &__title {
    }
    // .work-page__image
-   // ? тоже самое что -ibg
-   &__image {
-      position: relative;
+
+   // .work-page__video
+	&__video {
+		position: relative;
+		overflow: hidden;
+		// height: 0;
       max-width: rem(877);
-      padding-bottom: 48.7%;
+      padding-bottom: 48.85%;
       margin: 0 auto;
-      img {
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         top: 0;
-         left: 0;
-         object-fit: cover;
-      }
-   }
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 }
 //========================================================================================
+//====================================================================================================
 //====================================================================================================
 .health-page {
    @include adaptiveValue("padding-top", 133, 60);
