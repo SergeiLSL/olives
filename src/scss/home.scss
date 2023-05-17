@@ -196,6 +196,9 @@
       @media (max-width: $tablet) {
          padding: 0;
       }
+      &:hover {
+         transform: scale(1.05)
+      }      
    }
 }
 
@@ -369,6 +372,9 @@
       @media (max-width: $tablet) {
          padding: 0;
       }
+      &:hover {
+         transform: scale(1.05)
+      }   
    }
 }
 //========================================================================================
