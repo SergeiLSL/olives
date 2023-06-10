@@ -77,9 +77,54 @@
    }
    // .first-page__text
    &__text {
-      color: var(--bg-secondary);   }
-
+      color: var(--bg-secondary);   
+   }
+   &__sign {
+      position: absolute;
+      top: rem(-22);
+      left: 0;
+   }
 }
+
+// .sign {
+//    background-color: #697b03;
+//    width: 100%;
+//    // .sign__inner
+//    &__inner {
+//       // position: relative;
+//       margin: 0 auto;
+//       // max-width: rem(1368);
+//       padding: rem(17);
+//    }
+//    // .sign__row
+//    &__row {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//    }
+//    // .sign__text
+//    &__text {
+//       font-family: 'Montserrat';
+//       font-size: rem(14);
+//       line-height: 157%;
+//       letter-spacing: 0.1px;
+//       color: #F9F9FA;
+//    }
+//    // .sign__close
+//    &__close {
+//       position: absolute;
+//       right: 0;
+//       display: flex;
+//       width: rem(24);
+//       height: rem(24);
+//       justify-content: center;
+//       align-items: center;
+//       img {
+//          width: rem(11);
+//          height: rem(11);
+//       }
+//    }
+// }
 //========================================================================================
 //========================================================================================
 .reserve-page {
@@ -190,6 +235,7 @@
       flex: 0 1 54.89%;
       position: relative;
       z-index: 2;
+      transition: all 0.5s;
       img {
          width: 100%;
       }
@@ -354,12 +400,6 @@
       text-transform: uppercase;
       letter-spacing: rem(0.2);
       margin-top: rem(24);
-      // padding-bottom: rem(2);
-      // border-bottom: 1px solid #d3a265;
-      // transition: color 0.3s;
-      // &:hover {
-      //    color: #d3a265;
-      // }
    }
    // .product-page__image
    &__image {
@@ -443,7 +483,6 @@
       padding: rem(20) rem(50);
       color: var(--bg-buttons);
       background-color: var(--bg-accent);
-      // border: rem(2) solid $pageColor;
       border-radius: rem(5);
       transition: all 0.5s;
       &:hover {
